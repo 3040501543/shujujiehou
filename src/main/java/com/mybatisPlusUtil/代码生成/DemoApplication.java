@@ -1,4 +1,4 @@
-package com.mybatisPlusUtil.demo;
+package com.mybatisPlusUtil.代码生成;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -30,6 +30,7 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     /**
     * 列表
     */
+    @Override
     public IPage<${entity}Vo> list(${entity}Dto dto){
         LambdaQueryWrapper<${entity}> lqw = new LambdaQueryWrapper<>();
         //写逻辑
@@ -81,7 +82,8 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     /**
      * 保存
      */
-    public boolean saveOrUpdate(@RequestBody ${entity}Dto dto){
+        @Override
+        public boolean saveOrUpdate(@RequestBody ${entity}Dto dto){
         ${entity} vo = BeanUtil.toBean(dto, ${entity}.class);
         return  saveOrUpdate(vo);
     }
@@ -89,6 +91,7 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     /**
      * 详情
      */
+    @Override
     public ${entity}Vo getInfo(Long id){
         ${entity}Vo resultVo = new ${entity}Vo();
         ${entity} byId = getById(id);

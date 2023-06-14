@@ -32,9 +32,9 @@ public class ScrewTest {
   //数据源
   HikariConfig hikariConfig = new HikariConfig();
   hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-  hikariConfig.setJdbcUrl("jdbc:mysql://124.222.49.29:3306/db_weld_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true"); //1
+  hikariConfig.setJdbcUrl("jdbc:mysql://10.103.110.101:3306/db_examine_online?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true"); //1
   hikariConfig.setUsername("root");
-  hikariConfig.setPassword("XuBin2020@");
+  hikariConfig.setPassword("root@Test");
   //设置可以获取tables remarks信息
   hikariConfig.addDataSourceProperty("useInformationSchema", "true");
   hikariConfig.setMinimumIdle(2);

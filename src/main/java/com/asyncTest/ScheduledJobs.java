@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ScheduledJobs {
 
-//    //表示方法执行完成后5秒再开始执行
+    //表示方法执行完成后5秒再开始执行
 //    @Scheduled(fixedDelay=5000)
 //    public void fixedDelayJob() throws InterruptedException{
 //        System.out.println("fixedDelay 开始:" + new Date());

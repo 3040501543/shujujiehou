@@ -1,4 +1,4 @@
-package com.mybatisPlusUtil.demo;
+package com.mybatisPlusUtil.代码生成;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

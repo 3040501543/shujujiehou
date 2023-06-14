@@ -19,12 +19,13 @@ public class StreamApi {
         Employee e9 = new Employee(9,15,"F","Neetu","Singh");
         Employee e10 = new Employee(10,80,"M","Naveen","Jain");
         List<Employee> employees = Arrays.asList(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10);
-
+        //规约  获取年龄  总和
         Integer total = employees.stream().map(Employee::getAge).reduce(0,Integer::sum);
         System.out.println(total); //346
+        //规约  使用多线程  获取年龄总和
         Integer total2 = employees.stream().parallel().map(Employee::getAge).reduce(0,Integer::sum);
         System.out.println(total2); //346
-                                                                                        //初始值，累加器，合并器
+        //初始值，累加器，合并器
         Integer total3 = employees.stream().parallel().map(Employee::getAge).reduce(0,Integer::sum,Integer::sum);
         System.out.println(total3); //346
 

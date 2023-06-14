@@ -1,4 +1,4 @@
-package com.mybatisPlusUtil.demo.utils;
+package com.mybatisPlusUtil.代码生成.utils;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import io.swagger.annotations.ApiModel;

@@ -1,4 +1,4 @@
-package com.mybatisPlusUtil.demo.utils;
+package com.mybatisPlusUtil.代码生成.utils;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -36,10 +36,10 @@ public class CodeGenerator {
         //2、数据源配置
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)//数据库类型
-                .setDriverName("com.mysql.jdbc.Driver")
-                .setUrl("jdbc:mysql://124.222.49.29:3306/db_health_online")
+                .setDriverName("com.mysql.cj.jdbc.Driver")
+                .setUrl("jdbc:mysql://10.103.110.101:3306/db_operasafe_online")
                 .setUsername("root")
-                .setPassword("XuBin2020@");
+                .setPassword("root@Test");
         //3、策略配置
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig.setCapitalMode(true)//开启全局大写命名
@@ -52,11 +52,11 @@ public class CodeGenerator {
                 //.setSuperControllerClass("自定义继承的Controller类全称，带包名,没有就不用设置!")
                 .setRestControllerStyle(true) //生成 @RestController 控制器
                 .setEntityLombokModel(true)//使用lombok
-                .setInclude("oh_examination_email");//逆向工程使用的表
+                .setInclude("li_safety_appliance_licence");//逆向工程使用的表
 
         //4、包名策略配置
         PackageConfig packageConfig = new PackageConfig();
-        packageConfig.setParent("com.hyit.health")//设置包名的parent
+        packageConfig.setParent("com.tianyuan.operaSafe.project.operaSafe")//设置包名的parent
                 .setMapper("mapper")
                 .setService("service")
                 .setController("controller")

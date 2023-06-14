@@ -1,6 +1,7 @@
-package com.sendToWechat;
+package com.企业微信消息推送.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.企业微信消息推送.util.PingUtil;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+
 /**发送企业微信消息
  * @author shihy
  *
@@ -25,12 +27,16 @@ public class SendWeChatMessageService {
 /*
     private  static String CORPID = "wwb7515777a7d110c0";
 */
-    private  static String CORPID;
+    private  static String CORPID = "wwb48ede664bc81f31";
+
+//    private  static String CORPID;
     //获取企业应用的密钥，根据不同应用更改
 /*
     private  static String CORPSECRET = "HPnnp24NnGN78HWMGJYwHxgk5aUoXX73we2NR0RdCz4";
+
 */
-    private  static String CORPSECRET;
+    private  static String CORPSECRET = "CVsnCM0wwt6WgiR7_gNJm-0NIkBBn9rVXK2nhZZ4aLQ";
+//    private  static String CORPSECRET;
     //获取访问权限码URL
     private final static String ACCESS_TOKEN_URL = "https://qyapi.weixin.qq.com/cgi-bin/gettoken";
     //创建会话请求URL
@@ -164,5 +170,27 @@ public class SendWeChatMessageService {
         SendWeChatMessage weChat = new SendWeChatMessage();
         weChat.sendWeChatMessage("ShiHuyi", "1", "", "天干物燥。","0");
     }*/
+
+
+    public static void main(String[] args)throws Exception {
+
+//        private  static String CORPID = "wwb48ede664bc81f31";
+//        private  static String CORPSECRET = "CVsnCM0wwt6WgiR7_gNJm-0NIkBBn9rVXK2nhZZ4aLQ";
+        String ip = "123.03.230.1";
+//        String ip = "10.103.110.101";
+        boolean isConnect = PingUtil.isReachable(ip);
+        System.out.println(isConnect);
+        String toUser = "ZhangSan";
+
+        if (!isConnect){
+            String  json="{\"agentId\":\"1000002\",\"content\":\"这个ip地址不通了,赶紧处理："+ip+"\",\"corpId\":\"wwb48ede664bc81f31\",\"corpSecret\":\"CVsnCM0wwt6WgiR7_gNJm-0NIkBBn9rVXK2nhZZ4aLQ\",\"safe\":\"0\",\"toParty\":\"15\",\"toTag\":\"\",\"toUser\":\""+toUser+"\"}\n";
+            WechatVo vo=JSONObject.parseObject(json,WechatVo.class);
+            SendWeChatMessageService service = new SendWeChatMessageService();
+            service.sendWeChatMessage(vo.getToUser(),vo.getToParty(),null,vo.getContent(),vo.getSafe(),vo.getCorpId(),vo.getCorpSecret(),vo.getAgentId());
+        }
+
+
+
+    }
 
 }

@@ -1,4 +1,4 @@
-package com.sendToWechat;
+package com.企业微信消息推送.controller;
 
 
 /**
